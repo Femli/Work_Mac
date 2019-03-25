@@ -37,6 +37,7 @@ brew tap homebrew/headonly
 brew install smpeg
 ```
 <sub>*(NOTE 18JUL2015: Updated to reflect changes to the smpeg library; if you have any trouble here, try brew install –HEAD smpeg instead, with two dashes/hyphens before the HEAD option).</sub>
+
 Each command will take a few moments to run and display screens full of information; keep going, you’re almost done…
 
 9. Install Pygame: Type the following line at the Terminal prompt and hit return:
