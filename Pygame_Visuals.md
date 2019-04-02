@@ -99,5 +99,12 @@ Notice that at the coordinates (150, 150) the rectangle extends 150 pixel to the
 
 
 ### Circles
-`pygame.draw.circle(screen, color, (x,y), radius, thickn)
+Also like rectangles, we have very similar syntax to rectangles: 
+`pygame.draw.circle(screen, color, (x,y), radius, thickness)`
+
+`(x, y)` is the location where the circle will be centered, and `radius` states the radial distance from our `(x, y)` location.
+
+If we ran: `pygame.draw.circle(screen, (0, 0, 255), (50, 50), 50, 5)` we would get:
+
+<img width="302" alt="Window5" src="https://user-images.githubusercontent.com/22228100/55438581-d88a4700-5556-11e9-91b9-bcdcf3799239.png">
 
