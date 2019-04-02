@@ -58,28 +58,36 @@ black = (0,0,0)
 
 If we want to set the background color of our pygame window, we can do so like this: \
 let `screen = pygame.display.set_mode((Width, Height))`, \
-then `screen.fill(50, 100, 150)` will fill up the entire screen with a color
+then `screen.fill(50, 100, 150)` will fill up the entire screen like this:
+
+![Window2](https://user-images.githubusercontent.com/22228100/55432750-8a6e4700-5548-11e9-9a54-135bd8c06951.PNG)
 
 
+## Drawing
+There are several ways to draw in pygame, and some of the options are pretty complicated. We will only go over how to draw lines, rectangles and circles for now. 
 
-
-## drawing
-
-
-This is pseudo-code (give you a general idea) but will also provide an example:
-
-
-### drawing lines
+### Lines
+The basic syntax for drawing lines is the following: \
 `pygame.draw.lines(screen, color, closed, coordinates, thickness)`
 
+`screen` refers to the name we gave to the object that captures `pygame.display.set_mode((Width, Height))` \
+`color` refers to the `(r, g, b)` tupule
+`closed` refers to the condition of connecting the end-point of our shape/line back to our starting-point. It's either `True` or `False` \
+`coordinates` referes to a list object that contains the coordinates that we want to connect with lines, within our display.
+`thickness` refers to the actual thickness of our line or shape
 
-example: `pygame.draw.lines(screen, black, False, [(100,100), (150,200), (200,100)], 1)`
+Here is an example of how we would use this: \
+`pygame.draw.lines(screen, black, False, [(100,100), (200, 200)], 3)`
+
+If done on an a screen with `Width = 300` and `Height = 400`, with a background color of `(255, 0, 0)` (red), we would get the following:
 
 
-## drawing rectangles
+
+
+### Rectangles
 `pygame.draw.rect(screen, color, (x,y,width,height), thickness)`
 
 
-## drawing circles
+### Circles
 `pygame.draw.circle(screen, color, (x,y), radius, thickness)
 
