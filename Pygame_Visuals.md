@@ -77,17 +77,22 @@ The basic syntax for drawing lines is the following: \
 `thickness` refers to the actual thickness of our line or shape
 
 Here is an example of how we would use this: \
-`pygame.draw.lines(screen, black, False, [(100,100), (200, 200)], 3)`
+`pygame.draw.lines(screen, black, False, [(100,100), (200, 200)], 5)`
 
 If done on an a screen with `Width = 300` and `Height = 400`, with a background color of `(255, 0, 0)` (red), we would get the following:
 
-
+![Window3](https://user-images.githubusercontent.com/22228100/55433797-f81b7280-554a-11e9-99d2-8a324c681ca2.PNG)
 
 
 ### Rectangles
+Rectangles follow very similar syntax to lines: \
 `pygame.draw.rect(screen, color, (x,y,width,height), thickness)`
+
+In the `(x, y, width, height)` argument, `x` and `y` is the location where we want our rectangle to be positioned. `width` and `height` referes to the actual dimensions of our rectangle.
+
+If we ran the following: `pygame.draw.rect(screen, (0, 255, 0), (150, 150, 150, 150), 5)` we would get: 
 
 
 ### Circles
-`pygame.draw.circle(screen, color, (x,y), radius, thickness)
+`pygame.draw.circle(screen, color, (x,y), radius, thickn)
 
