@@ -9,74 +9,34 @@ No but seriously, it might get tough but don't give up! We are almost done
 
 ## Major python components
 
-`import` is a statement that tells python to import a module (from the many that exist in our local library)
-`import pygame` in this case, we want to import the pygame module that will give us access to a loooot of tools
-`import sys` allows us to hard-quit python by closing the pygame display screen
+There are several components that make up a basic pygame program. For now, we will go over only the most important stuff. It is important for you to practice these because they will almost always be present in every pygame program!
 
-`pygame` Is a module that contains various classes for creating a game
-`pygame.init()` The most important pygame method: allows us to start the pygame program
-`pygame.display.set_mode(())` This is where we set the size of our game screen window
-`pygame.display.update()` Need to run this to update screen content, everytime code iterates -- this concept is known as 'double buffering' which enables us to update the game every single frame
-`while (True): # do something` is the infinite loop that is required to run the game
 
-Here is how we set the background color9
-let `screen = pygame.display.set_mode(())`, then `screen.fill(r, g, b)` will fill up the entire screen with a color
 
+`import` - Is a statement that tells python to import a module. A module is a .py file inside the python library. \
+`import pygame` - The pygame module contains many classes and data structures for creating a game! If we didn't use this, we would be writing thousands and thousands lines of code... no thanks. \
+`import sys` - The sys module allows us to fully terminate a python program. \
+
+
+`pygame.init()` - The most important pygame method: it allows us to start the pygame program. \
+`pygame.display.set_mode(())` - This is where we set the size of our game screen window. \
+`pygame.display.update()` - Everytime we run this method, the screen display will update our changes -- Also known as _double buffering_, which enables us to update the game every single frame. \
+`while (True):` - The majority of our game code will be inside an infinite while loop. This is important for many reasons, which will be highlighted later. \
+
+Now that we have covered some of the most common methods used, here is an example of a very simple pygame program you can run.
 
 ```
+# ALL THIS CODE WILL BE INSIDE THE WHILE LOOP
+
 for event in pygame.event.get():
         if event.type == pygame.QUIT:
              pygame.quit(); sys.exit();
 ```
-This is the most basic pygame app we can run. It simply creates the display and allows us to exit
-`pygame.event.get()` collects all the events that the program records since `pygame.init()` is ran
-each iteration of the for-loop, the variable event will collect the events happening in the pygame program
-The if-else statement is there to let us know when the event of pressing the close window
-`pygame.quit()` will close down the python application
-`sys.exit()` will shut down the infinite loop, effectively killing the entire app
-    
+The purpose of this program is very simple: to terminate the pygame program when we press the "X" red button on the top-left or top-right of the window. \
 
-## Screen dimensions
-Based on set dimensions, let's say in this case 400 x 800, then:
-
-Upper left: (0, 0)
-Upper right : (400, 0)
-Lower left: (0, 800)
-Lower right: (400, 800)
-
-X coordinate increases from left to right
-y coordinate increases from top to bottom
-
-## colors
-colors will be composed of a tupule with three numbers: (r, b, g)
-where r is red from a range of 0 to 255, g is green from a range of 0 to 255, and b is blue from a range of 0 to 255
-
-```
-red = (255,0,0)
-green = (0,255,0)
-blue = (0,0,255)
-white = (255,255,255)
-black = (0,0,0)
-```
-0 - 255 is a range of color shading, where:
-0 is the brightest
-255 is the darkest
-
-
-## drawing
-
-This is pseudo-code (give you a general idea) but will also provide an example:
-
-### drawing lines
-`pygame.draw.lines(screen, color, closed, coordinates, thickness)`
-
-example: `pygame.draw.lines(screen, black, False, [(100,100), (150,200), (200,100)], 1)`
-
-## drawing rectangles
-`pygame.draw.rect(screen, color, (x,y,width,height), thickness)`
-
-## drawing circles
-`pygame.draw.circle(screen, color, (x,y), radius, thickness)
-
+Let's further break down this program: \
+`pygame.event.get()` - Collects all the events that the program records. Since `pygame.event.get()` is ran
+each iteration of the for-loop, the variable `event` will collect the events happening in the pygame program. By events we mean everything we do on the screen and keyboard. It captures the location of our mouse cursor, and the keys that we press. \
+The if-else statement is there to let us know when the event of pressing the close window happens. Then, `pygame.quit()` and will close down the python application and `sys.exit()` will shut down the infinite loop, effectively killing the entire application and game in the process.
 
 
