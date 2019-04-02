@@ -21,7 +21,7 @@ There are several components that make up a basic pygame program. For now, we wi
 `pygame.init()` - The most important pygame method: it allows us to start the pygame program. \
 `pygame.display.set_mode(())` - This is where we set the size of our game screen window. \
 `pygame.display.update()` - Everytime we run this method, the screen display will update our changes -- Also known as _double buffering_, which enables us to update the game every single frame. \
-`while (True):` - The majority of our game code will be inside an infinite while loop. This is important for many reasons, which will be highlighted later. 
+`while True:` - The majority of our game code will be inside an infinite while loop. This is important for many reasons, which will be highlighted later. 
 
 Now that we have covered some of the most common methods used, here is an example of a very simple pygame program you can run.
 
