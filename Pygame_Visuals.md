@@ -19,13 +19,15 @@ Pygame uses a slightly different orientation of the Cartesian plane, where the y
 The range of our x and y coordinates will be determined by us. In the `python.display.set_mode((Width, Height))` our `Width` is the range of our x-axes and `Height` is the range of our y-axis. 
 
 
-Lets say for example we set `Width = 400` and `Height = 700`. Then we will have a display that is a rectangle, where the width is 400 pixels and the height is 800 pixels. 
+Lets say for example we set `Width = 300` and `Height = 400`. Then we will have a display that is a rectangle, where the width is 300 pixels and the height is 400 pixels. 
+
+![Window](https://user-images.githubusercontent.com/22228100/55431959-8f31fb80-5546-11e9-8c7f-3d24d7c361cb.PNG)
 
 The corners of our display will be as follows: \
 Upper left: (0, 0) \
-Upper right : (400, 0) \
-Lower left: (0, 800) \
-Lower right: (400, 800)
+Upper right : (300, 0) \
+Lower left: (0, 400) \
+Lower right: (300, 400)
 
 **Always remember this:** \
 X coordinate increases from left to right \
@@ -33,24 +35,30 @@ y coordinate increases from top to bottom
 
 
 ## Colors
-colors will be composed of a tupule with three numbers: (r, b, g)
-where r is red from a range of 0 to 255, g is green from a range of 0 to 255, and b is blue from a range of 0 to 255
+Colors will be composed of a tupule of three numbers: `(r, b, g)` \
+where `r` is red from a range of 0 to 255, `g` is green from a range of 0 to 255, and `b` is blue from a range of 0 to 255. \
+0 to 255 is a range of color shading, where 0 is the darkest and 255 is the lightes.
 
-
+We can isolate the purest colors of red, green and blue with the following: 
 ```
 red = (255,0,0)
 green = (0,255,0)
 blue = (0,0,255)
+```
+
+We can also mix colors by adjusting different ranges: 
+```
+yellow = (255, 255, 0)
+turquoise = (0, 255, 255)
+pink = (255, 0, 255)
 white = (255,255,255)
 black = (0,0,0)
 ```
-0 - 255 is a range of color shading, where:
-0 is the brightest
-255 is the darkest
 
 
-Here is how we set the background color \
-let `screen = pygame.display.set_mode(())`, then `screen.fill(r, g, b)` will fill up the entire screen with a color
+If we want to set the background color of our pygame window, we can do so like this: \
+let `screen = pygame.display.set_mode((Width, Height))`, \
+then `screen.fill(50, 100, 150)` will fill up the entire screen with a color
 
 
 
