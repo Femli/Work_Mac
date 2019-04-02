@@ -92,6 +92,9 @@ In the `(x, y, width, height)` argument, `x` and `y` is the location where we wa
 
 If we ran the following: `pygame.draw.rect(screen, (0, 255, 0), (150, 150, 150, 150), 5)` we would get: 
 
+![Window4](https://user-images.githubusercontent.com/22228100/55434312-2ea5bd00-554c-11e9-988a-8c8290632c1b.PNG)
+
+
 
 ### Circles
 `pygame.draw.circle(screen, color, (x,y), radius, thickn)
