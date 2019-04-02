@@ -94,6 +94,8 @@ If we ran the following: `pygame.draw.rect(screen, (0, 255, 0), (150, 150, 150, 
 
 ![Window4](https://user-images.githubusercontent.com/22228100/55434312-2ea5bd00-554c-11e9-988a-8c8290632c1b.PNG)
 
+Notice that at the coordinates (150, 150) the rectangle extends 150 pixel to the right, and then drops 150 pixels down. It goes back to the rule: **X coordinate increases from left to right and y coordinate increases from top to bottom**
+
 
 
 ### Circles
