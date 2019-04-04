@@ -50,6 +50,24 @@ Let's break this down once again. The `event` variable is going to be capturing 
 Here is a [list](https://www.pygame.org/docs/ref/key.html) of the keys we can test for.
 
 
-###
+## User Input
+
+Now that we understand events better, let's see how we can use our input to capture events and provide game functionality. Let's say we have a small rectangle in our display. Here is the basic program for that:
+
+```
+import pygame, sys
+
+pygame.input()
+screen = pygame.display.set_mode((500, 500))
+
+while True:
   
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      pygame.quit(); sys.exit();
+    
+  screen.fill((255, 255, 255))
+  pygame.draw.rectangle == 
+  
+  TO BE CONTINUED :^))))))))))) -------------
   
