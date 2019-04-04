@@ -26,3 +26,30 @@ MOUSEBUTTONDOWN  #For when we let go of a mouse key
 These type of events can be further broken down into the specific keys we press on our keyboard, and the specific coordinates that our mouse pointer moves to. It all depends on how complex you want your game to be. 
 
 ### Capturing events in our pygame program
+The best way to capture events in our program is by using a for-loop. Here is an example of that:
+```
+for event in pygame.event.get():
+  print(event)
+```
+Let's break down what is actually happening here. 
+
+Notice that we create a variable called `event`. The variable `event` is going to capture the list of events that are happening in our program through the method `pygame.event.get()`. Then, after an event is captured, we want to print what that exact event was. If you press any key, or if you move your mouse, you should see a bunch of information in the shell regarding those events
+
+Let's look at another example.
+
+Say we want to create a simple program where if we press the *W* key in our keyboard, we will print the word "pig". This is how we would do that:
+```
+for event in pygame.event.input():
+  if event.type == pygame.KEYDOWN:
+    if event.key == pygame.K_w:
+      print("pig")
+```
+
+Let's break this down once again. The `event` variable is going to be capturing all the events in our program, thanks to the method `pygame.event.input()`. Now, since we want to focus on events regarding keys being pressed, we want to make sure that the `event.type` is of the type `KEYDOWN`. If it is, then we want the specific key to be *W*, and we specify that through `event.key == pygame.K_w`. If they key being pressed down is *W*, then we want the statement "pig" to print. 
+
+Here is a [list](https://www.pygame.org/docs/ref/key.html) of the keys we can test for.
+
+
+###
+  
+  
