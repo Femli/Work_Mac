@@ -41,13 +41,14 @@ while not gameOff:
                 rectX += 10
             elif event.key == pygame.K_s: #IF THE KEY PRESSED IS S, THEN THE RECTANGLE WILL MOVE LEFT BY 10 PIXELS
                 rectX -= 10
-        #THE CODE ABOVE WILL MOVE THE RECTANGLE EACH TIME WE PRESS A KEY. THE CODE BELOW WILL MAKE IT SO THE RECTANGLE MOVES WHEN WE HOLD DOWN A KEY
-
+    
+    #THE CODE ABOVE WILL MOVE THE RECTANGLE EACH TIME WE PRESS A KEY. THE CODE BELOW WILL MAKE IT SO THE RECTANGLE MOVES WHEN WE HOLD DOWN A KEY
+    #WE START OF BY CREATING A VARIABLE THAT WILL CAPTURE WHEN KEYS ARE PRESSED
     keyPress = pygame.key.get_pressed()
-    if keyPress[pygame.K_a]:
-        rectX -= 10
+    if keyPress[pygame.K_a]: #WE THEN TEST IF THE KEY BEING HELD DOWN IS A OR D
+        rectX -= 10 #IF KEY A IS HELD DOWN, MOVE LEFT CONTINOUSLY
     elif keyPress[pygame.K_d]:
-        rectX += 10
+        rectX += 10 #IF KEY D IS HELD DOWN, MOVE RIGHT CONTINOUSLY
     
     screen.fill((red)) #THIS IS WHERE WE SET THE BACKGROUND COLOR TO RED
     pygame.draw.rect(screen, blue, (rectX, rectY, 100, 100), 0) #THIS IS WHERE WE CREATE A RECTANGLE
