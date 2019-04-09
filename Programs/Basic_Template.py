@@ -17,13 +17,13 @@ screen = pygame.display.set_mode((screenWidth, screenHeight))
 gameOff = False 
 
 #THIS WHILE LOOP WILL REPEAT OVER AND OVER, AND MAKE SURE THAT OUR GAME VISUALS ARE CONSTANTLY UPDATING
-While not gameOff: 
-  
+while not gameOff: 
+
   #THIS IS NECESSARY TO CAPTURE THE EVENTS THAT ARE HAPPENING IN OUR GAME
   for event in pygame.event.get(): 
     
     #IF THE EVENT IS PRESSING THE 'X' BUTTON IN THE TOP LEFT OF THE SCREEN, THEN CLOSE 
-    if event.type() == pygame.QUIT: 
+    if event.type == pygame.QUIT: 
       gameOff = True #TURN OFF THE INFINITE WHILE LOOP
       pygame.quit() #SHUT OFF THE PROGRAM
       

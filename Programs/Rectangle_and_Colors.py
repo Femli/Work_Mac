@@ -16,7 +16,7 @@ screenHeight = 500
 
 #X AND Y LOCATIONS OF OUR RECTANGLE. NOTICE THAT IT IS HALF THE DIMENSIONS OF THE SCREEN, SO IT WILL ORIGINATE IN THE CENTER
 rectX = screenWidth / 2
-rectX = screenHeight / 2
+rectY = screenHeight / 2
 
 #CREATING OUR ACTUAL GAME WINDOW DISPLAY; IT IS CALLED 'screen'
 screen = pygame.display.set_mode((screenWidth, screenHeight)) 
@@ -25,16 +25,17 @@ screen = pygame.display.set_mode((screenWidth, screenHeight))
 gameOff = False 
 
 #THIS WHILE LOOP WILL REPEAT OVER AND OVER, AND MAKE SURE THAT OUR GAME VISUALS ARE CONSTANTLY UPDATING
-While not gameOff: 
+while not gameOff: 
   
   #THIS IS NECESSARY TO CAPTURE THE EVENTS THAT ARE HAPPENING IN OUR GAME
   for event in pygame.event.get(): 
     
     #IF THE EVENT IS PRESSING THE 'X' BUTTON IN THE TOP LEFT OF THE SCREEN, THEN CLOSE 
-    if event.type() == pygame.QUIT: 
+    if event.type == pygame.QUIT: 
       gameOff = True #TURN OFF THE INFINITE WHILE LOOP
       pygame.quit() #SHUT OFF THE PROGRAM
     
   screen.fill((red)) #THIS IS WHERE WE SET THE BACKGROUND COLOR TO RED
   pygame.draw.rect(screen, blue, (rectX, rectY, 100, 100), 0) #THIS IS WHERE WE CREATE A RECTANGLE
+  pygame.display.update()
   
