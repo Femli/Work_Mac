@@ -18,20 +18,21 @@ screenHeight = 500
 rectX = screenWidth / 2
 rectY = screenHeight / 2
 
+#
+clock = pygame.time.Clock()
+FPS = 10
+
 #CREATING OUR ACTUAL GAME WINDOW DISPLAY; IT IS CALLED 'screen'
 screen = pygame.display.set_mode((screenWidth, screenHeight)) 
 
 #THIS IS NECESSARY FOR WHEN WE WANT TO SHUT OFF OUR INFINITE WHILE LOOP
 gameOff = False 
 
-clock = pygame.time.Clock()
-FPS = 100
-
 #THIS WHILE LOOP WILL REPEAT OVER AND OVER, AND MAKE SURE THAT OUR GAME VISUALS ARE CONSTANTLY UPDATING
 while not gameOff: 
-  
-    clock.tick(FPS)
 
+    clock.tick(FPS)
+  
   #THIS IS NECESSARY TO CAPTURE THE EVENTS THAT ARE HAPPENING IN OUR GAME
     for event in pygame.event.get(): 
     
@@ -43,17 +44,17 @@ while not gameOff:
         #IF THIS EVENT DETECTS ANY KEY BEING PRESSED, WE WILL EXECUTE THE PROGRAM BELOW:
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w: #IF THE KEY PRESSED IS W, THEN THE RECTANGLE WILL MOVE RIGHT BY 10 PIXELS
-                rectX += 50
+                rectX += 10
             elif event.key == pygame.K_s: #IF THE KEY PRESSED IS S, THEN THE RECTANGLE WILL MOVE LEFT BY 10 PIXELS
-                rectX -= 50
+                rectX -= 10
     
     #THE CODE ABOVE WILL MOVE THE RECTANGLE EACH TIME WE PRESS A KEY. THE CODE BELOW WILL MAKE IT SO THE RECTANGLE MOVES WHEN WE HOLD DOWN A KEY
     #WE START OF BY CREATING A VARIABLE THAT WILL CAPTURE WHEN KEYS ARE PRESSED
     keyPress = pygame.key.get_pressed()
     if keyPress[pygame.K_a]: #WE THEN TEST IF THE KEY BEING HELD DOWN IS A OR D
-        rectX -= 20 #IF KEY A IS HELD DOWN, MOVE LEFT CONTINOUSLY
+        rectX -= 10 #IF KEY A IS HELD DOWN, MOVE LEFT CONTINOUSLY
     elif keyPress[pygame.K_d]:
-        rectX += 20 #IF KEY D IS HELD DOWN, MOVE RIGHT CONTINOUSLY
+        rectX += 10 #IF KEY D IS HELD DOWN, MOVE RIGHT CONTINOUSLY
     
     screen.fill((red)) #THIS IS WHERE WE SET THE BACKGROUND COLOR TO RED
     pygame.draw.rect(screen, blue, (rectX, rectY, 100, 100), 0) #THIS IS WHERE WE CREATE A RECTANGLE
