@@ -20,7 +20,7 @@ rectY = screenHeight / 2
 
 #
 clock = pygame.time.Clock()
-FPS = 60
+FPS = 30
 
 #CREATING OUR ACTUAL GAME WINDOW DISPLAY; IT IS CALLED 'screen'
 screen = pygame.display.set_mode((screenWidth, screenHeight)) 
@@ -28,10 +28,10 @@ screen = pygame.display.set_mode((screenWidth, screenHeight))
 #THIS IS NECESSARY FOR WHEN WE WANT TO SHUT OFF OUR INFINITE WHILE LOOP
 gameOff = False 
 
-jumpState = False
-jumpHeight = rectY - 100
+
 jumpCount = 10
-jumpTotal = 10
+jumpHeight = .5
+isJump = False
 
 #THIS WHILE LOOP WILL REPEAT OVER AND OVER, AND MAKE SURE THAT OUR GAME VISUALS ARE CONSTANTLY UPDATING
 while not gameOff: 
@@ -45,11 +45,19 @@ while not gameOff:
         if event.type == pygame.QUIT: 
             gameOff = True #TURN OFF THE INFINITE WHILE LOOP
             pygame.quit() #SHUT OFF THE PROGRAM
+    
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                isJump = True
 
-        #IF THIS EVENT DETECTS ANY KEY BEING PRESSED, WE WILL EXECUTE THE PROGRAM BELOW:
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE: #IF THE KEY PRESSED IS W, THEN THE RECTANGLE WILL MOVE RIGHT BY 10 PIXELS
-                jumpState = True
+        if isJump == True and jumpCount >= -10:
+            rectY -= (jumpHeight * abs(jumpHeight)) * jumpHeight
+            jumpCount -= 1
+        elif jumpCount == -10:
+            isJump = False
+            jumpCount = 10
+
+
     
     #THE CODE ABOVE WILL MOVE THE RECTANGLE EACH TIME WE PRESS A KEY. THE CODE BELOW WILL MAKE IT SO THE RECTANGLE MOVES WHEN WE HOLD DOWN A KEY
     #WE START OF BY CREATING A VARIABLE THAT WILL CAPTURE WHEN KEYS ARE PRESSED
@@ -57,24 +65,7 @@ while not gameOff:
     if keyPress[pygame.K_a]: #WE THEN TEST IF THE KEY BEING HELD DOWN IS A OR D
         rectX -= 10 #IF KEY A IS HELD DOWN, MOVE LEFT CONTINOUSLY
     elif keyPress[pygame.K_d]:
-        rectX += 10 #IF KEY D IS HELD DOWN, awMOVE RIGHT CONTINOUSLY
-    
-    if jumpState == True and jumpTotal < 10:
-        rectY -= jumpCount ** 2
-        jumpCount -= 1
-        jumpTotal += 1
-    elif jumpState == True and jumpTotal > 0:
-        rectY += jumpCount ** 2
-        jumpCount += 1
-        jumpTotal -= 1
-    else:
-       jumpCount = 0
-       jumpState = False
-
-    
-
-        
-    
+        rectX += 10 #IF KEY D IS HELD DOWN, MOVE RIGHT CONTINOUSLY
     
     screen.fill((red)) #THIS IS WHERE WE SET THE BACKGROUND COLOR TO RED
     pygame.draw.rect(screen, blue, (rectX, rectY, 100, 100), 0) #THIS IS WHERE WE CREATE A RECTANGLE
