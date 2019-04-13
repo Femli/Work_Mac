@@ -67,7 +67,7 @@ while not gameOff:
 
         #IF THIS EVENT DETECTS ANY KEY BEING PRESSED, WE WILL EXECUTE THE PROGRAM BELOW:
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_SPACE: #IF THE KEY PRESSED IS W, THEN THE RECTANGLE WILL MOVE RIGHT BY 10 PIXELS
+            if event.key == pygame.K_SPACE:
                 jumpState = True
     
     keyPress = pygame.key.get_pressed()
