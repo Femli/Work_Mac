@@ -25,7 +25,7 @@ rectW = 100 #WITH OF OUR RECTANGLE
 rectH = 100 #HEIGHT OF OUR RECTANGLE
 
 sponge = pygame.image.load(os.path.join(folder, "sponge.jpeg")) #LOADING AN IMAGE INTO OUR SCREEN
-sponge = pygame.transform.scale(sponge, (rectW, rectH))
+sponge = pygame.transform.scale(sponge, (rectW, rectH)) #THIS IS SO WE CAN SCALE THE IMAGE DOWN TO OUR OBJECT SIZE
 
 #DELAYING OUR PROGRAMING SO THAT ONLY A CERTAIN AMOUNT OF FPS WILL BE DISPLAYED
 clock = pygame.time.Clock()
