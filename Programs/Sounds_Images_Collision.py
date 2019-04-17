@@ -10,6 +10,8 @@ pygame.init()
 img = pygame.image.load('Images/sponge.jpg')
 img = pygame.transform.scale(img, (50, 50))
 
+bounce = pygame.mixer.Sound('Sound/bounce.wav')
+
 #WE WILL CREATE VARIABLES WITH COLOR NAMES SO WE CAN USE THEM LATER ON
 blue = (0, 0, 255)
 red = (255, 0, 0)
