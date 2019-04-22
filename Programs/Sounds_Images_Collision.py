@@ -10,7 +10,7 @@ pygame.init()
 img = pygame.image.load('Images/sponge.jpg')
 img = pygame.transform.scale(img, (50, 50))
 
-bounce = pygame.mixer.Sound('Sound/bounce.wav')
+bounce = pygame.mixer.Sound('Sounds/oof.ogg')
 
 #WE WILL CREATE VARIABLES WITH COLOR NAMES SO WE CAN USE THEM LATER ON
 blue = (0, 0, 255)
@@ -58,6 +58,7 @@ while not gameOff:
             if event.key == pygame.K_SPACE:
                 if rectY == jumpOrigin: #FOR WHEN WE DON'T WANT TO MULTI JUMP
                     jumpState = True
+                    bounce.play()
     
     keyPress = pygame.key.get_pressed()
     if keyPress[pygame.K_a]: #WE THEN TEST IF THE KEY BEING HELD DOWN IS A OR D
