@@ -1,7 +1,7 @@
 import pygame, sys, array
 from pygame.locals import*
 
-
+#SAO is lit
 
 pygame.init()
 
@@ -35,9 +35,9 @@ while True:
 
     keys = pygame.key.get_pressed()
     if keys[pygame.K_w] and posY > 0:
-        posY -= 5
+        posY -= 3
     if keys[pygame.K_s] and posY < 400:
-        posY += 5
+        posY += 3
 
     screen.fill((0, 0, 0))
 
@@ -57,17 +57,21 @@ while True:
         moveLeft = False
         moveRight = True
         if any(posY <= y <= (posY + 50) for y in range(ballY - radius, ballY + radius)):
-            moveUp = True
+            moveDown = True
+            moveUp = False
         #elif any((posY + 50) < y <= (posY + 100 ) for y in range(ballY - radius, ballY + radius)):
         else:
-            moveDown = True
+            moveUp = True
+            moveDown = False
 
-    if moveUp and (ballY + radius) > 0:
+    #if moveUp and not moveDown and (ballY - radius) >= 0:
+    if moveUp and not moveDown and (ballY - radius) >= 100:
         ballY += 5
-        if (ballY + radius) <= 0:
+        if (ballY - radius) <= 0:
             moveUp = False
             moveDown = True
-    elif moveDown and (ballY + radius) < screenH:
+    #if moveDown and not moveUp and (ballY + radius) <= screenH:
+    if moveDown and not moveUp and (ballY + radius) <= 300:
         ballY -= 5
         if (ballY + radius) >= screenH:
             moveUp = True
