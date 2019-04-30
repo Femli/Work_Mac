@@ -1,9 +1,5 @@
 import pygame, sys
 from pygame.locals import*
-import random
-
-randX = random.randint(0, 500)
-randY = random.randint(0, 600)
 
 pygame.init()
 
@@ -22,7 +18,6 @@ timer = 0
 while True:
     
     clock.tick(FPS)
-    timer += 1
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -41,8 +36,5 @@ while True:
 
 
     screen.fill((255, 255, 255))
-    if timer == 500:
-        pygame.draw.rect(screen, (255, 0, 255), (randX, randY, 20, 20), 0)
-        timer = 0
     screen.blit(img, (posX, posY))
     pygame.display.update()

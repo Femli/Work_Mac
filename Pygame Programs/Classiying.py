@@ -2,16 +2,30 @@ import pygame
 from pygame.locals import*
 
 class screen:
-    width = 500
-    height = 500
+
     def __init__(self, width, height):
         self.width = width
         self.height = height
-        
+        self.screen = pygame.display.set_mode((self.width, self.height))
+    
+    def fill(self, color):
+        self.screen.fill((color))
+
+
+def gamePlay():
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit(); sys.exit()
+
+black = (0, 0, 0)
+red = (255, 0, 0)
+white = (255, 255, 255)
+green = (0, 255, 0)
+blue = (0, 0, 255)
 
 def playerMovement(posX, posY, steps):
     
-    for events in pygame.events.get():
+    for event in pygame.event.get():
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w:
                 posY -= steps
@@ -49,9 +63,24 @@ class playerObject:
         self.img = pygame.image.load(str(fileName))
 
 pygame.init()
-screen = screen()
+screen = screen(500, 500)
+player = playerObject()
+player.setImage('Images/sponge.jpg')
+
+
 
 while True:
+    
+    gamePlay()
+    playerMovement(player.posX, player.posY, player.steps)
 
+    screen.fill(red)
+    screen.screen.blit(player.img, (player.posX, player.posY))
+
+    pygame.draw.rect(screen.screen, white, (250, 250, 100, 100), 0)
+    pygame.display.update()
+    
+
+    
 
 
