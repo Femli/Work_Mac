@@ -1,7 +1,7 @@
 import pygame, sys, array
 from pygame.locals import*
 
-#SAO is lit
+#grapes...get some
 
 pygame.init()
 
@@ -65,20 +65,20 @@ while True:
             moveDown = False
 
     #if moveUp and not moveDown and (ballY - radius) >= 0:
-    if moveUp and not moveDown and (ballY - radius) >= 100:
+    if moveUp and (ballY + radius) < screenH:
         ballY += 5
-        if (ballY - radius) <= 0:
-            moveUp = False
-            moveDown = True
+    else: #(ballY - radius) >= screenH:
+        moveUp = False
+        moveDown = True
     #if moveDown and not moveUp and (ballY + radius) <= screenH:
-    if moveDown and not moveUp and (ballY + radius) <= 300:
+    if moveDown and (ballY - radius) > 0:
         ballY -= 5
-        if (ballY + radius) >= screenH:
-            moveUp = True
-            moveDown = False
+    else: #(ballY + radius) <= 0:
+        moveUp = True
+        moveDown = False
 
     pygame.draw.rect(screen, (255, 255, 255), (posX, posY, 20, 100), 0)
     pygame.draw.circle(screen, (255, 0, 0), (ballX, ballY), radius, 0)
+    print(ballY)
 
     pygame.display.update()
-
