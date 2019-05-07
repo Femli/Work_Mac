@@ -29,21 +29,21 @@ To create a git repository in your local files, run the following commands in yo
   - For example, if I want to save it in my documents I would type `cd documents`
 - Then to create a repository in the file location, type `git init`
 
-At this point you can push this local git repository onto any online repository on GitHub.
+At this point you can push this local git repository into your online repository on GitHub.
 
 #### Cloning
 If you want to clone an online repository from GitHub, then do the following:
 - Go into the root directory of a GitHub repository and then copy the URL.
   - For example, the URL to one of my own repositories is `https://github.com/Femli/Work_Mac`
-- Now open the terminal, navigate into the folder you want to clone this repo, and enter the following commands:
+- Now open the terminal, navigate into the folder you want to clone this repo to, and enter the following commands:
   - `git clone <repo URL here>`
 
 #### Global Settings
 Afterwards, configure your Git settings so that you can push your work. Do this by entering the following:
-- `git config --global <your GitHub username here>`
-  - For example, for my GitHub I would say `git config --global Femli`
-- Then enter your email associated with your GitHub account with `git config --global <your GitHub email here>`
-  - For example, I would write `git config --global franco@digitalnest.org`
+- `git config --global user.name "<your GitHub username here>"`
+  - For example, for my GitHub I would say `git config --global user.name "Femli"`
+- Then enter your email associated with your GitHub account with `git config --global user.email "<your GitHub email here>"`
+  - For example, I would write `git config --global user.email "franco@digitalnest.org"`
 
 Once your global settings are configured, you can begin saving your work online by pushing it.
 
@@ -55,14 +55,14 @@ There are three steps to saving your work onto your GitHub repository.
 Once you have saved the file changes you want to add to your online repo, verify that you actuall have changes to implement by opening the Terminal, navigate to your local repo, and then type `git status`. All files in red are unsaved changes to your online repository.
 
 **Step 1** - Getting on the Bus to Hades
-Once you confirm there are changes to be made, go ahead and add those changes by enter `git add <file name here>`. If you want to save all the changes you made to your repo, then simply type 'git add .'
+Once you confirm there are changes to be made, go ahead and add those changes by enter `git add <file name here>`. If you want to save all the changes you made to your repo, then simply type `git add .`
 
 **Step 2** - Bus Travels to Hades
 Once you added the changes to be made, you want to *stage* those changes by doing the following `git commit -m "<personal note here>"`.
-    - You usually want to give yourself a note about the changes you made since last time you worked on your file. For example, `git commit -m "added code that creates a hit box"`
+- You usually want to give yourself a note about the changes you made since last time you worked on your file. For example, `git commit -m "added code that creates a hit box"`
 
 **Step 3** - Get off the bus!
-The final step is now to simply push all your commited changes to your online repo by entering `git push`.
+The final step is now to simply push all your commited changes to your online repo by entering `git push`. You should now see all the changes you made on your local repo be reflected on your GitHub repo.
 
 
 
